@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using TravelRecordApp.Model;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using TravelRecordApp.ViewModel;
 
 namespace TravelRecordApp
 {
@@ -13,29 +15,20 @@ namespace TravelRecordApp
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        MainViewModel viewModel;
+
         public MainPage()
         {
             InitializeComponent();
 
             var assembly = typeof(MainPage);
 
+            viewModel = new MainViewModel();
+            BindingContext = viewModel;
+
             iconImage.Source = ImageSource.FromResource("TravelRecordApp.Assets.Images.plane.png", assembly);
         }
 
-        private void LoginButton_Clicked(object sender, EventArgs e)
-        {
-            bool isEmailEmpty = string.IsNullOrEmpty(emailEntry.Text);
-            bool isPasswordEmpty = string.IsNullOrEmpty(passwordEntry.Text);
-
-            if (isEmailEmpty || isPasswordEmpty)
-            {
-
-            }
-            else
-            {
-                Navigation.PushAsync(new HomePage());
-            }
-        }
 
         private void registerButton_Clicked(object sender, EventArgs e)
         {

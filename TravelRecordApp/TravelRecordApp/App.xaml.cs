@@ -2,6 +2,7 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using TravelRecordApp.Model;
 
 namespace TravelRecordApp
 {
@@ -10,7 +11,8 @@ namespace TravelRecordApp
         public static string DatabaseLocation = string.Empty;
 
         public static MobileServiceClient MobileService = new MobileServiceClient("https://travelrecordapprfp.azurewebsites.net");
-
+        public static Users user = new Users();
+        
         public App()
         {
             InitializeComponent();

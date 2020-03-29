@@ -6,16 +6,16 @@
              mc:Ignorable="d"
              x:Class="TravelRecordApp.RegisterPage" Title="Registration">
 
-    <StackLayout VerticalOptions="Center"
+    <StackLayout x:Name="containerStackLayout" VerticalOptions="Center"
                  Margin="20">
         <Entry x:Name="emailEntry" Placeholder="Email "
                TextColor="{StaticResource blueColor}"
-               Text=""
+               Text="{Binding Email, Mode=TwoWay}"
                Keyboard="Email"/>
         <Entry x:Name="passwordEntry" Placeholder="Password"
                IsPassword="True"
                TextColor="{StaticResource blueColor}"
-               Text=""/>
+               Text="{Binding Password, Mode=TwoWay}"/>
         <Entry x:Name="confirmPasswordEntry" Placeholder="Confirm password"
                IsPassword="True"
                TextColor="{StaticResource blueColor}"
