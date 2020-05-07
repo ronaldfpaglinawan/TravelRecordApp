@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TravelRecordApp.Model;
+using TravelRecordApp.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,25 +14,14 @@ namespace TravelRecordApp
     public partial class RegisterPage : ContentPage
     {
         Users user;
+        RegisterViewModel viewModel;
+
         public RegisterPage()
         {
             InitializeComponent();
 
-            user = new Users();
-            containerStackLayout.BindingContext = user;
-        }
-
-        private async void registerButton_Clicked(object sender, EventArgs e)
-        {
-            if(passwordEntry.Text == confirmPasswordEntry.Text)
-            {
-                // We can register the user
-                Users.Register(user);
-            }
-            else
-            {
-                await DisplayAlert("Error", "Paswords don't match", "Ok");
-            }
+            viewModel = new RegisterViewModel();
+            BindingContext = viewModel;
         }
     }
 }

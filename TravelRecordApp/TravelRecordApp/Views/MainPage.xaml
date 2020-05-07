@@ -27,10 +27,9 @@
                 Margin="0,50,0,0"
                 Text="Log in"
                 Command="{Binding LoginCommand}"
-                CommandParameter="{Binding User}"
-                Style="{StaticResource normalButton}"/>
+                CommandParameter="{Binding User}"/>
         <Button x:Name="registerButton"
                 Text="Register"
-                Clicked="registerButton_Clicked"/>
+                Command="{Binding RegisterNavigationCommand}"/>
     </StackLayout>
 </ContentPage>

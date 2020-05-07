@@ -8,22 +8,25 @@
 
     <StackLayout x:Name="containerStackLayout" VerticalOptions="Center"
                  Margin="20">
-        <Entry x:Name="emailEntry" Placeholder="Email "
-               TextColor="{StaticResource blueColor}"
+        <Entry x:Name="emailEntry"
                Text="{Binding Email, Mode=TwoWay}"
+               Placeholder="Email "
+               TextColor="{StaticResource blueColor}"
                Keyboard="Email"/>
-        <Entry x:Name="passwordEntry" Placeholder="Password"
+        <Entry x:Name="passwordEntry" 
+               Text="{Binding Password, Mode=TwoWay}"
+               Placeholder="Password"
                IsPassword="True"
-               TextColor="{StaticResource blueColor}"
-               Text="{Binding Password, Mode=TwoWay}"/>
-        <Entry x:Name="confirmPasswordEntry" Placeholder="Confirm password"
+               TextColor="{StaticResource blueColor}"/>
+        <Entry x:Name="confirmPasswordEntry" 
+               Text="{Binding ConfirmPassword, Mode=TwoWay}"
+               Placeholder="Confirm password"
                IsPassword="True"
-               TextColor="{StaticResource blueColor}"
-               Text=""/>
+               TextColor="{StaticResource blueColor}"/>
         <Button x:Name="registerButton" 
+                Command="{Binding RegisterCommand}"
+                CommandParameter="{Binding User}"
                 Margin="0,50,0,0"
-                Text="Register"
-                Clicked="registerButton_Clicked"
-                Style="{StaticResource normalButton}"/>
+                Text="Register"/>
     </StackLayout>
 </ContentPage>
